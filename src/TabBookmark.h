@@ -935,8 +935,8 @@ LRESULT CALLBACK MouseProc(int nCode, WPARAM wParam, LPARAM lParam)
 
             if (!isOnNewTab && TopContainerView && isOnBookmark)
             {
-                DebugLog(L"isOnBookmark: = Shift+MButton");
-                SendKeys(VK_MBUTTON, VK_SHIFT);
+                DebugLog(L"isOnBookmark: = Ctrl+LButton");
+                SendKeys(VK_LBUTTON, VK_CONTROL);
                 return 1;
             }
         }
@@ -952,8 +952,8 @@ LRESULT CALLBACK MouseProc(int nCode, WPARAM wParam, LPARAM lParam)
 
             if (!isOnNewTab && MenuBarPane && isOnOneMenuBookmark)
             {
-                DebugLog(L"isOnOneMenuBookmark: = Shift+MButton");
-                SendKeys(VK_MBUTTON, VK_SHIFT);
+                DebugLog(L"isOnOneMenuBookmark: = Ctrl+LButton");
+                SendKeys(VK_LBUTTON, VK_CONTROL);
                 return 1;
             }
         }
