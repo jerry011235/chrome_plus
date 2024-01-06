@@ -8,7 +8,7 @@ jobs:
     strategy:
       matrix:
         include: [
-            { name: Chrome++_x86, arch: x86 },
+ 
             { name: Chrome++_x64, arch: x64 },
         ]
 
