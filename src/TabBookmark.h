@@ -925,7 +925,7 @@ LRESULT CALLBACK MouseProc(int nCode, WPARAM wParam, LPARAM lParam)
             }
         }
 
-        if (IsBookmarkNewTab && !IsPressed(VK_CONTROL) && !IsPressed(VK_SHIFT))
+        if (IsBookmarkNewTab && wParam == WM_LBUTTONUP && !IsPressed(VK_CONTROL) && !IsPressed(VK_SHIFT))
         {
             HWND hwnd = WindowFromPoint(pmouse->pt);
             NodePtr TopContainerView = GetTopContainerView(hwnd);
@@ -936,11 +936,11 @@ LRESULT CALLBACK MouseProc(int nCode, WPARAM wParam, LPARAM lParam)
             if (!isOnNewTab && TopContainerView && isOnBookmark)
             {
                 DebugLog(L"isOnBookmark: = MBUTTON");
-                SendKeys(VK_CONTROL, VK_LBUTTON);
+                SendKeys(VK_MBUTTON);
                 return 1;
             }
         }
-        if (IsBookmarkNewTab && !IsPressed(VK_CONTROL) && !IsPressed(VK_SHIFT))
+        if (IsBookmarkNewTab && wParam == WM_LBUTTONUP && !IsPressed(VK_CONTROL) && !IsPressed(VK_SHIFT))
         {
             HWND hwnd_p = WindowFromPoint(pmouse->pt);
             HWND hwnd_k = GetFocus();
@@ -953,7 +953,7 @@ LRESULT CALLBACK MouseProc(int nCode, WPARAM wParam, LPARAM lParam)
             if (!isOnNewTab && MenuBarPane && isOnOneMenuBookmark)
             {
                 DebugLog(L"isOnOneMenuBookmark: = MBUTTON");
-                SendKeys(VK_CONTROL, VK_LBUTTON);
+                SendKeys(VK_MBUTTON);
                 return 1;
             }
         }
