@@ -72,7 +72,7 @@ jobs:
           name: version-${{ matrix.arch }}-${{ env.VERSION }}
           path: build/release/*
 
-  Create Release:
+  Create_Release:
     needs: build
     runs-on: ubuntu-latest
 
